@@ -16,7 +16,7 @@ public class CarController {
     CarService carService = new CarServiceImpl();
 
     @GetMapping(value = "/cars")
-    private String getCars(@RequestParam(required = false) Integer count, ModelMap model) {
+    private String listCars(@RequestParam(required = false) Integer count, ModelMap model) {
         List<Car> cars;
         cars = (count != null)
                 ? ((count > -1 && count <= 5)
