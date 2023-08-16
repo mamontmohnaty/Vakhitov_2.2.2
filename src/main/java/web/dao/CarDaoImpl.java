@@ -6,11 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarDaoImpl implements CarDao {
-
+    private final List<Car> cars = new ArrayList<>();
     @Override
     public List<Car> listCars(Integer i) {
 
-        List<Car> cars = new ArrayList<>();
 
         Car car1 = new Car(1, "Audi", "Red");
         Car car2 = new Car(2, "BMW", "Green");
@@ -24,8 +23,7 @@ public class CarDaoImpl implements CarDao {
         cars.add(car4);
         cars.add(car5);
 
-        cars = cars.subList(0, i);
+        return cars.subList(0, i);
 
-        return cars;
     }
 }
